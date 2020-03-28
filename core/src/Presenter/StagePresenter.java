@@ -2,7 +2,11 @@ package Presenter;
 
 public class StagePresenter {
 
-    //Tutaj bedzie zdefiniowany ruch bloków
-    //interakcje na klik - wywolane z widoku
 
+    public int[] GetLocation()
+    {
+        int [] array = new int[1];
+
+        return array;
+    }
 }
