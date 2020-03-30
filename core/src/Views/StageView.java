@@ -12,33 +12,36 @@ import Presenter.StagePresenter;
 import Service.BlockService;
 
 public class StageView{
-
     StagePresenter presenter;
     public static SpriteBatch batch;
     Texture img;
     BlockService service;
 
+
     public StageView() {
         presenter = new StagePresenter();
         batch = new SpriteBatch();
-        img = new Texture("Blocks\\Blocks_01_256x256_Alt_00_002.png");
+
     }
 
     public void Draw(){
         DrawBackground();
         //DrawBlock(presenter.GetXLocation(),presenter.GetYLocation());
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < service.getBlockList().length; i++) {
+            img = new Texture("Blocks\\Blocks_01_256x256_Alt_00_00"+ service.getBlockList()[i].getColorID()+ ".png");
             DrawBlock(presenter.GetXLocation()[i], presenter.GetYLocation()[i]);
+            img.dispose();
         }
+
     }
     public void DrawBackground(){
-        Gdx.gl.glClearColor(1, 0, 0, 0);
+        Gdx.gl.glClearColor(1, 1, 1, 0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
     }
 
     public void DrawBlock(int XCoordinate, int YCoordinate){
         batch.begin();
-        batch.draw(img, XCoordinate, YCoordinate, presenter.getWallLength() , presenter.getWallLength());
+        batch.draw(img, XCoordinate, YCoordinate, service.getWallLength() , service.getWallLength());
         batch.end();
     }
     public void dispose(){

@@ -13,6 +13,8 @@ public class BlockModel {
     private int columnID;
     private int colorID;
     private int wallLength;
+    BlockModel[] blockList;
+
 
     public BlockModel(
             int rowID,
@@ -31,11 +33,11 @@ public class BlockModel {
         int i = random.nextInt(6) + 1;
         return i;
     }
+    /*public void AddBlockToList(BlockModel block){
 
-    /*public BlockModel CreateBlock(int rowID, int columnID, int colorID, int wallLength)
-    {
-        return new BlockModel(rowID, columnID, wallLength);
     }*/
+
+
     public void setRowID(int rowID) {
         this.rowID = rowID;
     }
