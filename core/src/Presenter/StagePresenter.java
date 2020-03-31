@@ -12,24 +12,24 @@ public class StagePresenter {
     }
     public int[] GetXLocation()
     {
-        int[] blockXCoordinates = new int[blockService.getBlockList().length];
+        int[] blockXCoordinates = new int[blockService.getBlockList().size()];
         for(int i = 0; i < blockXCoordinates.length; i++){
-            blockXCoordinates[i] = blockService.getBlockList()[i].getColumnID() * wallLength;
+            blockXCoordinates[i] = blockService.getBlockList().get(i).getColumnID() * wallLength;
         }
         return blockXCoordinates;
     }
     public int[] GetYLocation()
     {
-        int[] blockYCoordinates = new int[blockService.getBlockList().length];
+        int[] blockYCoordinates = new int[blockService.getBlockList().size()];
         for(int i = 0; i < blockYCoordinates.length; i++){
-            blockYCoordinates[i] = blockService.getBlockList()[i].getRowID() * wallLength;
+            blockYCoordinates[i] = blockService.getBlockList().get(i).getRowID() * wallLength;
         }
         return blockYCoordinates;
     }
     public int[] GetColorID(){
-        int[] blockColorID = new int[blockService.getBlockList().length];
+        int[] blockColorID = new int[blockService.getBlockList().size()];
         for(int i = 0; i < blockColorID.length; i++){
-            blockColorID[i] = blockService.getBlockList()[i].getColorID() * wallLength;
+            blockColorID[i] = blockService.getBlockList().get(i).getColorID() * wallLength;
         }
         return blockColorID;
     }

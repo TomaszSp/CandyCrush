@@ -26,9 +26,8 @@ public class StageView{
 
     public void Draw(){
         DrawBackground();
-        //DrawBlock(presenter.GetXLocation(),presenter.GetYLocation());
-        for (int i = 0; i < service.getBlockList().length; i++) {
-            img = new Texture("Blocks\\Blocks_01_256x256_Alt_00_00"+ service.getBlockList()[i].getColorID()+ ".png");
+        for (int i = 0; i < service.getBlockList().size(); i++) {
+            img = new Texture("Blocks\\Blocks_01_256x256_Alt_00_00"+ service.getBlockList().get(i).getColorID()+ ".png");
             DrawBlock(presenter.GetXLocation()[i], presenter.GetYLocation()[i]);
             img.dispose();
         }
