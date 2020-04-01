@@ -13,8 +13,9 @@ public class BlockModel {
     private int columnID;
     private int colorID;
     private int wallLength;
-    BlockModel[] blockList;
-
+    static ArrayList blockList;
+    public BlockModel() {
+    }
 
     public BlockModel(
             int rowID,
@@ -27,11 +28,13 @@ public class BlockModel {
                 this.wallLength = wallLength;
             }
 
+
+
     private static int ColorLottery()
     {
         Random random = new Random();
-        int i = random.nextInt(6) + 1;
-        return i;
+
+        return random.nextInt(6) + 1;
     }
     /*public void AddBlockToList(BlockModel block){
 
@@ -67,6 +70,16 @@ public class BlockModel {
 
     public int getWallLength() {
         return wallLength;
+    }
+    public static void CreateBlockList(){
+        blockList = new ArrayList();
+    }
+    public static void AddBlockToBlockList(BlockModel block){
+        blockList.add(block);
+    }
+
+    public static ArrayList getBlockList() {
+        return blockList;
     }
 
 }

@@ -2,6 +2,7 @@ package Service;
 
 import com.badlogic.gdx.Gdx;
 
+import java.sql.RowId;
 import java.util.ArrayList;
 
 import Model.BlockModel;
@@ -15,26 +16,33 @@ public class BlockService {
     int blockNumber = 0;
 
     public BlockService() {
-        blockList = new ArrayList();;
         CreateBlockNet();
     }
 
     public void CreateBlockNet() {
         wallLength = Gdx.graphics.getWidth() / NUMBER_OF_COLUMNS;
-
+        BlockModel.CreateBlockList();
         for (int i = 0; i < NUMBER_OF_COLUMNS; i++) {
             for (int j = 0; j < NUMBER_OF_ROWS; j++) {
                 block = new BlockModel(j, i, wallLength);
-                blockList.add(block);
+                BlockModel.AddBlockToBlockList(block);
                 blockNumber++;
             }
         }
     }
 
-    public void getBlocksByRowiID()
+
+    /*public  ArrayList getBlocksByRowID(int rowID)
     {
 
-    }
+        ArrayList blockListWithRowID = new ArrayList();
+        for (int i = 0; i < BlockModel.getBlockList().size(); i++) {
+            if(BlockModel.getBlockList().get(i).getRowID() == rowID){
+                blockListWithRowID.add(BlockModel.getBlockList().get(i));
+            }
+        }
+        return blockListWithRowID;
+    }*/
 
     public void getBlocksByColumnID()
     {
@@ -46,7 +54,7 @@ public class BlockService {
 
     }
     public static ArrayList<BlockModel> getBlockList() {
-        return blockList;
+        return BlockModel.getBlockList();
     }
     public static int getWallLength() {
         return wallLength;
