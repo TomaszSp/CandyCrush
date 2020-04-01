@@ -36,10 +36,6 @@ public class BlockModel {
 
         return random.nextInt(6) + 1;
     }
-    /*public void AddBlockToList(BlockModel block){
-
-    }*/
-
 
     public void setRowID(int rowID) {
         this.rowID = rowID;

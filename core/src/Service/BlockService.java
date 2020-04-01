@@ -32,17 +32,17 @@ public class BlockService {
     }
 
 
-    /*public  ArrayList getBlocksByRowID(int rowID)
+    public  ArrayList getBlocksByRowID(int rowID)
     {
 
         ArrayList blockListWithRowID = new ArrayList();
         for (int i = 0; i < BlockModel.getBlockList().size(); i++) {
-            if(BlockModel.getBlockList().get(i).getRowID() == rowID){
+            if(getBlockList().get(i).getRowID()== rowID){
                 blockListWithRowID.add(BlockModel.getBlockList().get(i));
             }
         }
         return blockListWithRowID;
-    }*/
+    }
 
     public void getBlocksByColumnID()
     {

@@ -6,16 +6,17 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import Service.BlockService;
 import Views.StageView;
 
 public class MyGdxGame extends ApplicationAdapter {
-
+    BlockService blockService;
 	StageView stageView;
 
 	
 	@Override
 	public void create () {
-
+        blockService = new BlockService();
 		stageView = new StageView();
 	}
 
