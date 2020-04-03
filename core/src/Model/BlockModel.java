@@ -1,14 +1,17 @@
 package Model;
 
+import com.badlogic.gdx.Gdx;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class BlockModel {
+
     //Tu bedzie cala logika zachowania blokow:
     //Logika sprawdzenia przyznania punktow
     //instrukcje dzialania dla prezentera w przypadku przyznania punktow lub nie
-
+    private int ID;
     private int rowID;
     private int columnID;
     private int colorID;
@@ -18,16 +21,20 @@ public class BlockModel {
     }
 
     public BlockModel(
+            int ID,
             int rowID,
             int columnID,
             int wallLength)
             {
+                this.ID = ID;
                 this.rowID = rowID;
                 this.columnID = columnID;
                 this.colorID = ColorLottery();
                 this.wallLength = wallLength;
             }
+    public void MoveBlock(){
 
+    }
 
 
     private static int ColorLottery()
@@ -35,6 +42,10 @@ public class BlockModel {
         Random random = new Random();
 
         return random.nextInt(6) + 1;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public void setRowID(int rowID) {
